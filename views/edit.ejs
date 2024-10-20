@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit File</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="main w-full min-h-screen bg-zinc-900">
+    <div class="form p-10 text-white">
+      <form action="/update" method="post">
+        <input class="block px-5 w-full rounded-md outline-none py-2 bg-zinc-800"
+          value="<%= fileName.replace(/.txt$/,'').replace(/_/g, ' ') %>" type="text" placeholder="Title" name="title">
+        <input class="hidden block px-5 w-full rounded-md outline-none py-2 bg-zinc-800" value="<%= fileName %>"
+          type="text" placeholder="Title" name="oldTitle">
+        <textarea class="block px-5 w-full rounded-md outline-none mt-2 py-2 bg-zinc-800 resize-none"
+          placeholder="Description" cols="22" rows="4" name="description"><%= data.trim() %></textarea>
+        <button type="submit" class="btn mt-2 bg-yellow-600 px-5 py-2 rounded-md">Save Changes</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
